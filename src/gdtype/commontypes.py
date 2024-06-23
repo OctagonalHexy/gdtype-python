@@ -27,8 +27,6 @@
 import logging
 from dataclasses import dataclass, field
 
-import numpy
-
 from typing import List, Tuple
 from typing import Dict, Callable, Any
 from types import FunctionType
@@ -1009,15 +1007,6 @@ class ByteArray():
     def __getitem__( self, index ):
         return self.values[ index ]
 
-    def toNumpy(self):
-        return numpy.array( self.values )
-        # return numpy.array([ point for point in self.values ])
-
-    @staticmethod
-    def fromNumpy(data_array: numpy.ndarray):
-        point_list = [ int(point) for point in data_array ]
-        return ByteArray( point_list )
-
 
 def deserialize_ByteArray( _: int, data: BytesContainer ):
     data_len = data.size()
@@ -1059,15 +1048,6 @@ class Int32Array():
 
     def append( self, value ):
         self.values.append( value )
-
-    def toNumpy(self):
-        return numpy.array( self.values )
-        # return numpy.array([ point for point in self.values ])
-
-    @staticmethod
-    def fromNumpy(data_array: numpy.ndarray):
-        point_list = [ int(point) for point in data_array ]
-        return Int32Array( point_list )
 
 
 def deserialize_Int32Array( _: int, data: BytesContainer ):
@@ -1111,15 +1091,6 @@ class Int64Array():
     def append( self, value ):
         self.values.append( value )
 
-    def toNumpy(self):
-        return numpy.array( self.values )
-        # return numpy.array([ point for point in self.values ])
-
-    @staticmethod
-    def fromNumpy(data_array: numpy.ndarray):
-        point_list = [ int(point) for point in data_array ]
-        return Int64Array( point_list )
-
 
 def deserialize_Int64Array( _: int, data: BytesContainer ):
     data_len = data.size()
@@ -1162,15 +1133,6 @@ class Float32Array():
     def append( self, value ):
         self.values.append( value )
 
-    def toNumpy(self):
-        return numpy.array( self.values )
-        # return numpy.array([ point for point in self.values ])
-
-    @staticmethod
-    def fromNumpy(data_array: numpy.ndarray):
-        point_list = [ point for point in data_array ]
-        return Float32Array( point_list )
-
 
 def deserialize_Float32Array( _: int, data: BytesContainer ):
     data_len = data.size()
@@ -1212,15 +1174,6 @@ class Float64Array():
 
     def append( self, value ):
         self.values.append( value )
-
-    def toNumpy(self):
-        return numpy.array( self.values )
-        # return numpy.array([ point for point in self.items ])
-
-    @staticmethod
-    def fromNumpy(data_array: numpy.ndarray):
-        point_list = [ point for point in data_array ]
-        return Float64Array( point_list )
 
 
 def deserialize_Float64Array( _: int, data: BytesContainer ):
@@ -1308,15 +1261,6 @@ class Vector2Array():
     def append( self, xcoord, ycoord ):
         self.items.append( (xcoord, ycoord) )
 
-    def toNumpy(self):
-        return numpy.array( self.items )
-        # return numpy.array([ [point[0], point[1]] for point in self.items ])
-
-    @staticmethod
-    def fromNumpy(data_array: numpy.ndarray):
-        point_list = [ [point[0], point[1]] for point in data_array ]
-        return Vector2Array( point_list )
-
 
 # def deserialize_list( data_flags: int, data: BytesContainer ):
 def deserialize_Vector2Array( _: int, data: BytesContainer ):
@@ -1364,15 +1308,6 @@ class Vector3Array():
 
     def append( self, xcoord, ycoord, zcoord ):
         self.items.append( (xcoord, ycoord, zcoord) )
-
-    def toNumpy(self):
-        return numpy.array( self.items )
-        # return numpy.array([ [point[0], point[1], point[2]] for point in self.items ])
-
-    @staticmethod
-    def fromNumpy(data_array: numpy.ndarray):
-        point_list = [ [point[0], point[1], point[2]] for point in data_array ]
-        return Vector3Array( point_list )
 
 
 # def deserialize_list( data_flags: int, data: BytesContainer ):
@@ -1423,15 +1358,6 @@ class ColorArray():
 
     def append( self, red_val, green_val, blue_val, alpha_val ):
         self.items.append( (red_val, green_val, blue_val, alpha_val) )
-
-    def toNumpy(self):
-        return numpy.array( self.items )
-        # return numpy.array([ [point[0], point[1], point[2], point[3]] for point in self.items ])
-
-    @staticmethod
-    def fromNumpy(data_array: numpy.ndarray):
-        point_list = [ [point[0], point[1], point[2], point[3]] for point in data_array ]
-        return ColorArray( point_list )
 
 
 # def deserialize_list( data_flags: int, data: BytesContainer ):
