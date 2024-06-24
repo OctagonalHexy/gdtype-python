@@ -62,11 +62,11 @@ def deserialize_custom( message: bytes, deserialize_function ):
         raise ValueError( f"invalid packet -- too short: {mess_len} < 4 for {message!r}" )
 
     data = BytesContainer( message )
-    expected_size = data.popInt32()
-    message_size  = data.size()
-    if message_size != expected_size:
-        _LOGGER.error( "invalid packet -- packet size mismatch data size: %s", data )
-        raise ValueError( f"message size mismatch: {message_size} != {expected_size} for {data}" )
+    # expected_size = data.popInt32()
+    # message_size  = data.size()
+    # if message_size != expected_size:
+    #     _LOGGER.error( "invalid packet -- packet size mismatch data size: %s", data )
+    #     raise ValueError( f"message size mismatch: {message_size} != {expected_size} for {data}" )
 
     data_len = data.size()
     if data_len < 4:
