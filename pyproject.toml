@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gdtype"
+version = "0.0.1"
+authors = [
+    {name = "Arkadiusz Netczuk",   email = "dev.arnet@gmail.com"},
+    {name = "Octagonal Hexy",   email = "OctagonalHexy@tutanota.com"}
+]
+maintainers = [
+    {name = "Octagonal Hexy",   email = "OctagonalHexy@tutanota.com"}
+]
+description = "A fork of gdtype by Arkadiusz Netczuk for use in Blender Godot IPC extension."
+readme = "README.md"
+requires-python = ">=3.11.9"
+license = {file = "LICENSE.txt"}
+classifiers = ["Programming Language :: Python :: 3"]
+
+[project.urls]
+Repository = "https://github.com/me/spam.git"
+"Bug Tracker" = "https://github.com/me/spam/issues"
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["gdtype*"]  # ["*"] by default
+exclude = ["testgdtype*"]
