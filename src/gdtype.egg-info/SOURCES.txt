@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+src/gdtype/__init__.py
+src/gdtype/binaryapiv3.py
+src/gdtype/binaryapiv4.py
+src/gdtype/bytescontainer.py
+src/gdtype/commontypes.py
+src/gdtype/deserializationstreamv4.py
+src/gdtype.egg-info/PKG-INFO
+src/gdtype.egg-info/SOURCES.txt
+src/gdtype.egg-info/dependency_links.txt
+src/gdtype.egg-info/top_level.txt
